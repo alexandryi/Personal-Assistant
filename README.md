@@ -2,9 +2,9 @@
 
 ---
 
-# 📒 Personal Assistant — вебзастосунок на Django
+#  Personal Assistant — вебзастосунок на Django
 
-## 🧩 Опис проєкту
+##  Опис проєкту
 
 **Personal Assistant** — це вебзастосунок для керування особистою інформацією, створений за допомогою Django.
 
@@ -167,7 +167,7 @@ Personal-Assistant/
 |---|---|
 | Python | Основна мова програмування |
 | Django | Backend framework |
-| SQLite | База даних |
+| PostgreSQL | База даних |
 | Bootstrap 5 | Стилізація інтерфейсу |
 | HTML/CSS | Frontend |
 | Django ORM | Робота з базою даних |
