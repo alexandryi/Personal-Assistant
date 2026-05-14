@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Note</h2>
+
+<p>{{ note.text }}</p>
+
+<p>Tags:
+{% for t in note.tags.all %}
+<span>{{ t.name }}</span>
+{% endfor %}
+</p>
+
+<a href="{{ note.id }}/edit/">Edit</a>
+<a href="{{ note.id }}/delete/">Delete</a>
+
+{% endblock %}

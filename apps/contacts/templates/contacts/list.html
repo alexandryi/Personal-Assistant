@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Contacts</h2>
+
+<form method="get" class="mb-3">
+
+    <input type="text"
+           name="q"
+           placeholder="Search contact">
+
+    <button type="submit">
+        Search
+    </button>
+
+</form>
+
+<a href="{% url 'contact_create' %}">
+    Add contact
+</a>
+
+{% for c in contacts %}
+
+<div class="card mb-3">
+
+    <div class="card-body">
+
+        <h3>
+            {{ c.name }}
+            (ID: {{ c.id }})
+        </h3>
+
+        <p>
+            <strong>Email:</strong>
+            {{ c.email }}
+        </p>
+
+        <p>
+            <strong>Phone:</strong>
+            {{ c.phone }}
+        </p>
+
+        <p>
+            <strong>Address:</strong>
+            {{ c.address }}
+        </p>
+
+        <p>
+            <strong>Birthday:</strong>
+            {{ c.birthday }}
+        </p>
+
+        <a href="{% url 'contact_edit' c.id %}">
+            Edit
+        </a>
+
+        <a href="{% url 'contact_delete' c.id %}">
+            Delete
+        </a>
+
+    </div>
+
+</div>
+
+{% empty %}
+
+<p>No contacts found</p>
+
+{% endfor %}
+
+<hr>
+
+<h2>Upcoming birthdays</h2>
+
+<form method="get" class="mb-3">
+
+    <input type="number"
+           name="days"
+           placeholder="Birthdays in next N days">
+
+    <button type="submit">
+        Show birthdays
+    </button>
+
+</form>
+
+{% for c in upcoming %}
+
+<p>
+    {{ c.name }} - {{ c.birthday }}
+</p>
+
+{% empty %}
+
+<p>No upcoming birthdays</p>
+
+{% endfor %}
+
+{% endblock %}

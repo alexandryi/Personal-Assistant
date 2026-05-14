@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Files</h2>
+
+<a href="upload/">Upload file</a>
+
+<h3>Filter:</h3>
+    <a href="/files/">All</a>
+{% for key, val in categories %}
+<a href="?category={{ key }}">{{ val }}</a>
+
+{% endfor %}
+
+<ul>
+{% for f in files %}
+<li>
+<a href="{{ f.file.url }}">{{ f.file.name }}</a>
+<a href="{{ f.id }}/delete/">Delete</a>
+</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

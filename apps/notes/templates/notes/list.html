@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Notes</h2>
+
+<form method="get">
+<input type="text" name="q" placeholder="Search text">
+<button>Search</button>
+</form>
+
+<form method="get">
+<input type="text" name="tag" placeholder="Search by tag">
+<button>Filter</button>
+</form>
+
+<a href="create/">Add Note</a>
+
+<h3>Tags:</h3>
+<a href="/notes/">All</a>
+
+{% for tag in tags %}
+<a href="?tag={{ tag.name }}">{{ tag.name }}</a>
+{% endfor %}
+<ul>
+{% for note in notes %}
+<li>
+<a href="{{ note.id }}/static">{{ note.text|truncatechars:50 }}</a>
+</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

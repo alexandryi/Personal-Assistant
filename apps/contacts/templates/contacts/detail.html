@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>{{ contact.name }}</h2>
+
+<p>Email: {{ contact.email }}</p>
+<p>Address: {{ contact.address }}</p>
+<p>Birthday: {{ contact.birthday }}</p>
+
+<h3>Phones:</h3>
+<ul>
+{% for p in contact.phones.all %}
+<li>{{ p.number }}</li>
+{% endfor %}
+</ul>
+
+<a href="{{ contact.id }}/edit/">Edit</a>
+<a href="{{ contact.id }}/delete/">Delete</a>
+
+<form method="post" action="{{ contact.id }}/add-phone/">
+{% csrf_token %}
+<input name="number" placeholder="Phone">
+<button>Add phone</button>
+</form>
+
+{% endblock %}
