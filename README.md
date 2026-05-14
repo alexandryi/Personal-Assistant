@@ -329,37 +329,6 @@ git push
 
 ---
 
-### 4. Push у свою гілку
-
-```bash
-git push origin <назва_гілки>
-```
-
----
-
-### 5. Переходимо на developer
-
-```bash
-git checkout developer
-```
-
----
-
-### 6. Merge Pull Request
-
-```bash
-git merge --no-ff <назва_гілки> -m "Опис PR"
-```
-
----
-
-### 7. Push developer
-
-```bash
-git push origin developer
-```
-
----
 
 ### 8. Вихід із середовища
 
